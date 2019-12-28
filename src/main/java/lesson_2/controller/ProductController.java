@@ -39,7 +39,7 @@ public class ProductController {
     public String hello(Model uiModel, @ModelAttribute("student") Product product) {
         product = productService.getProductById(2);
         uiModel.addAttribute("product", product);
-        System.out.println(product.getId() + " " + product.getCost() + " " + product.getTitle());
+        System.out.println(product.getId()  + " " + product.getTitle()+ " " + product.getCost());
         return "product";
     }
 
