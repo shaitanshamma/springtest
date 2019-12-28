@@ -1,15 +1,24 @@
 package lesson_2;
 
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.List;
 
+
+@Component
 public class ProductsRepository {
     List<Product> productsList = new ArrayList<Product>();
 
     public void addProduct(){
-        productsList.add(new Product(1,"Яблоко", 250));
-        productsList.add(new Product(2,"Груша", 350));
-        productsList.add(new Product(3,"Арбуз", 550));
-        productsList.add(new Product(4,"Картофель", 180));
+
+    }
+
+    public Product findOneById(int id) {
+        Product product = new Product();
+        product.setId(1 + id);
+        product.setTitle("Apple " + id);
+        product.setCost(1212 + id);
+        return product;
     }
 }
