@@ -11,6 +11,10 @@
       <h2>Submitted Product</h2>
       <table>
          <tr>
+            <td>id</td>
+            <td>${id}</td>
+         </tr>
+         <tr>
             <td>title</td>
             <td>${title}</td>
          </tr>
@@ -20,7 +24,7 @@
          </tr>
       </table>
       <ul>
-         <c:forEach var="item" items="${product.title}">
+         <c:forEach var="item" items="${product.list}">
             <li>${item}</li>
          </c:forEach>
       </ul>
