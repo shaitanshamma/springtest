@@ -12,6 +12,9 @@ public class MainClass {
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Book.class)
                 .addAnnotatedClass(Author.class)
+                .addAnnotatedClass(Product.class)
+                .addAnnotatedClass(Client.class)
+                .addAnnotatedClass(ClientChoice.class)
                 .addAnnotatedClass(Reader.class)
                 .buildSessionFactory();
         // CRUD
@@ -19,17 +22,19 @@ public class MainClass {
 //
         session = factory.getCurrentSession();
         session.beginTransaction();
-        List<Reader> readers = session.createQuery("from Reader").getResultList();
+        List<Product> readers = session.createQuery("from ClientChoice").getResultList();
         System.out.println(readers);
         session.getTransaction().commit();
-
+//
 //        try {
 //            // CREATE
 //            session = factory.getCurrentSession();
-//            Book tmpBook = new Book();
-//            tmpBook.setTitle("Java 2");
+//            ClientChoice clientChoice = new ClientChoice();
+//            clientChoice.setId_client(1);
+//            clientChoice.setId(1);
+//            clientChoice.setProduct_id(2);
 //            session.beginTransaction();
-//            session.save(tmpBook);
+//            session.save(clientChoice);
 //            session.getTransaction().commit();
 //        } finally {
 //            factory.close();
@@ -37,19 +42,21 @@ public class MainClass {
 //        }
 //
 //        try {
-////           // CREATE
+//           // CREATE
 //            session = factory.getCurrentSession();
-//            Book tmpBook = new Book();
-//            tmpBook.setTitle("Java 2");
+//            Product tmpPrd = new Product();
+//            tmpPrd.setTitle("Banana");
+//            tmpPrd.setPrice(200);
+////            tmpPrd.set(100);
 //            session.beginTransaction();
-//            session.save(tmpBook);
+//            session.save(tmpPrd);
 //            session.getTransaction().commit();
 //        } finally {
 //            factory.close();
 //            session.close();
 //        }
 
-           // READ
+//  //          READ
 //            session = factory.getCurrentSession();
 //            session.beginTransaction();
 //            Book harryPotterBook = session.get(Book.class, 2);
@@ -74,10 +81,10 @@ public class MainClass {
 //            session = factory.getCurrentSession();
 //            session.beginTransaction();
 //////             подставлем условие 1 из трех законменированных вариантов
-////         List<Book> allBooks = session.createQuery("from Book").getResultList();
+//         List<Product> allProducts = session.createQuery("from Product").getResultList();
 ////          List<Book> allBooks = session.createQuery("from Book b where b.title = 'Java 1 Advanced'").getResultList();
 ////          List<Book> allBooks = session.createQuery("from Book b where b.title = :title").setParameter("title", "Java 2").getResultList();
-//            System.out.println(allBooks);
+//            System.out.println(allProducts);
 //            session.getTransaction().commit();
 
 //            session = factory.getCurrentSession();
@@ -91,10 +98,10 @@ public class MainClass {
 // CREATE
 //        try {
 //            session = factory.getCurrentSession();
-//            Author author = new Author();
-//            author.setName("rolling1");
+//            Client client = new Client();
+//            client.setName("Vasya");
 //            session.beginTransaction();
-//            session.save(author);
+//            session.save(client);
 //            session.getTransaction().commit();
 //        } finally {
 //            factory.close();
