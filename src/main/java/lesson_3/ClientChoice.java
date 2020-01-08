@@ -16,24 +16,16 @@ public class ClientChoice {
     @Column(name = "id")
     private int id;
 
-    public int getId_client() {
-        return id_client;
+    public int getClient_id() {
+        return client_id;
     }
 
-    public void setId_client(int id_client) {
-        this.id_client = id_client;
+    public void setClient_id(int client_id) {
+        this.client_id = client_id;
     }
 
-    @Column(name = "id_client")
-    private int id_client;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    @Column(name = "client_id")
+    private int client_id;
 
     public int getProduct_id() {
         return product_id;
@@ -46,30 +38,29 @@ public class ClientChoice {
     @Column(name = "product_id")
     private int product_id;
 
-//    public String getTitle() {
-//        return title;
-//    }
-//
-//    public void setTitle(String title) {
-//        this.title = title;
-//    }
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     @ManyToMany
     @JoinTable(
             name = "product_buyers",
-            joinColumns = @JoinColumn(name = "client_choice_id_client"),
-            inverseJoinColumns = @JoinColumn(name = "client_id")
+            joinColumns = @JoinColumn(name = "client_id"),
+            inverseJoinColumns = @JoinColumn(name = "product_id")
     )
-
     private List<Product> products;
+
     public List<Product> getProducts() {
         return products;
     }
+
     public void setProducts(List<Product> products) {
         this.products = products;
     }
-
-
 
     @Override
     public String toString() {
@@ -77,6 +68,6 @@ public class ClientChoice {
         for (Product o : products) {
             allProducts += o.getTitle() + " ";
         }
-        return "Clients_choice [" + id + " " + id_client + " " + allProducts + "]";
+        return "Clients_choice [" + " " + client_id + " " + allProducts + " "+ product_id+"]";
     }
 }

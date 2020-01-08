@@ -2,6 +2,7 @@ package lesson_3;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "product")
@@ -22,18 +23,20 @@ public class Product {
             joinColumns = @JoinColumn(name = "product_id"),  // то что связываем
             inverseJoinColumns = @JoinColumn(name = "client_id") // то на что связываем
     )
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "client_id")
-    private Client client;
+    private List<Client> clients;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "client_id")
+//    private Client client;
+//
+//    public Client getClient() {
+//        return client;
+//    }
+//
+//    public void setClient(Client client) {
+//        this.client = client;
+//    }
     public int getId() {
         return id;
-    }
-    public Client getClient() {
-        return client;
-    }
-
-    public void setClient(Client client) {
-        this.client = client;
     }
 
     public void setId(int id) {

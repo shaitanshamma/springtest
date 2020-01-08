@@ -30,7 +30,7 @@ public class MainClass {
 //            // CREATE
 //            session = factory.getCurrentSession();
 //            ClientChoice clientChoice = new ClientChoice();
-//            clientChoice.setId_client(1);
+//            clientChoice.setClient_id(1);
 //            clientChoice.setId(1);
 //            clientChoice.setProduct_id(2);
 //            session.beginTransaction();
@@ -56,10 +56,10 @@ public class MainClass {
 //            session.close();
 //        }
 
-//  //          READ
+  //          READ
 //            session = factory.getCurrentSession();
 //            session.beginTransaction();
-//            Book harryPotterBook = session.get(Book.class, 2);
+//            ClientChoice harryPotterBook = session.get(ClientChoice.class, 1);
 //            session.getTransaction().commit();
 //            System.out.println(harryPotterBook);
 

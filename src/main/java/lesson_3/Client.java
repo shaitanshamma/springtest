@@ -32,7 +32,7 @@ public class Client {
     }
 
     @Basic(fetch = FetchType.LAZY)
-    @OneToMany(mappedBy = "client", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     private List<Product> products;
 
     public Client() {
@@ -45,6 +45,5 @@ public class Client {
             allProducts += o.getTitle() + " ";
         }
         return "Client [" + id + " " + name + " " + allProducts + "]";
-        // return "Author [" + id + " " + name + "]";
     }
 }
