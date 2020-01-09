@@ -14,7 +14,7 @@ public class MainClass {
                 .addAnnotatedClass(Author.class)
                 .addAnnotatedClass(Product.class)
                 .addAnnotatedClass(Client.class)
-                .addAnnotatedClass(ClientChoice.class)
+        //        .addAnnotatedClass(ClientChoice.class)
                 .addAnnotatedClass(Reader.class)
                 .buildSessionFactory();
         // CRUD
@@ -22,7 +22,7 @@ public class MainClass {
 //
         session = factory.getCurrentSession();
         session.beginTransaction();
-        List<Product> readers = session.createQuery("from ClientChoice").getResultList();
+        List<Product> readers = session.createQuery("from Client").getResultList();
         System.out.println(readers);
         session.getTransaction().commit();
 //

@@ -33,15 +33,23 @@ public class Client {
 
     @Basic(fetch = FetchType.LAZY)
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
-    private List<Product> products;
+    private List<Product> product;
 
     public Client() {
     }
 
+    @ManyToMany
+    @JoinTable(
+            name = "product_buyers",
+            joinColumns = @JoinColumn(name = "client_id"),
+            inverseJoinColumns = @JoinColumn(name = "product_id")
+    )
+    private List<Product> products;
+
     @Override
     public String toString() {
         String allProducts = "";
-        for (Product o : products) {
+        for (Product o : product) {
             allProducts += o.getTitle() + " ";
         }
         return "Client [" + id + " " + name + " " + allProducts + "]";
