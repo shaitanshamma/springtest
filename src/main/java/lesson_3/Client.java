@@ -31,9 +31,9 @@ public class Client {
         return id;
     }
 
-    @Basic(fetch = FetchType.LAZY)
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
-    private List<Product> product;
+//    @Basic(fetch = FetchType.LAZY)
+//    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+//    private List<Product> product;
 
     public Client() {
     }
@@ -49,7 +49,7 @@ public class Client {
     @Override
     public String toString() {
         String allProducts = "";
-        for (Product o : product) {
+        for (Product o : products) {
             allProducts += o.getTitle() + " ";
         }
         return "Client [" + id + " " + name + " " + allProducts + "]";

@@ -5,7 +5,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "client_choice")
+@Table(name = "product_buyers")
 public class ClientChoice {
 
     public ClientChoice() {
@@ -46,28 +46,28 @@ public class ClientChoice {
         this.id = id;
     }
 
-    @ManyToMany
-    @JoinTable(
-            name = "product_buyers",
-            joinColumns = @JoinColumn(name = "client_id"),
-            inverseJoinColumns = @JoinColumn(name = "product_id")
-    )
-    private List<Product> products;
-
-    public List<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(List<Product> products) {
-        this.products = products;
-    }
-
-    @Override
-    public String toString() {
-        String allProducts = "";
-        for (Product o : products) {
-            allProducts += o.getTitle() + " ";
-        }
-        return "Clients_choice [" + " " + client_id + " " + allProducts + " "+ product_id+"]";
-    }
+//    @ManyToMany
+//    @JoinTable(
+//            name = "product_buyers",
+//            joinColumns = @JoinColumn(name = "client_id"),
+//            inverseJoinColumns = @JoinColumn(name = "product_id")
+//    )
+//    private List<Product> products;
+//
+//    public List<Product> getProducts() {
+//        return products;
+//    }
+//
+//    public void setProducts(List<Product> products) {
+//        this.products = products;
+//    }
+//
+//    @Override
+//    public String toString() {
+//        String allProducts = "";
+//        for (Product o : products) {
+//            allProducts += o.getTitle() + " ";
+//        }
+//        return "Clients_choice [" + " " + client_id + " " + allProducts +"]";
+//    }
 }

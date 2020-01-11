@@ -19,17 +19,17 @@ public class MainClass {
 //
         session = factory.getCurrentSession();
         session.beginTransaction();
-        List<Product> readers = session.createQuery("from Client").getResultList();
-        System.out.println(readers);
+        List<Product> products = session.createQuery("from Client").getResultList();
+        System.out.println(products);
         session.getTransaction().commit();
-//
+
 //        try {
 //            // CREATE
 //            session = factory.getCurrentSession();
 //            ClientChoice clientChoice = new ClientChoice();
-//            clientChoice.setClient_id(1);
-//            clientChoice.setId(1);
-//            clientChoice.setProduct_id(2);
+//            //clientChoice.setId(4);
+//            clientChoice.setClient_id(3);
+//            clientChoice.setProduct_id(1);
 //            session.beginTransaction();
 //            session.save(clientChoice);
 //            session.getTransaction().commit();
@@ -53,7 +53,7 @@ public class MainClass {
 //            session.close();
 //        }
 
-  //          READ
+        //          READ
 //            session = factory.getCurrentSession();
 //            session.beginTransaction();
 //            ClientChoice harryPotterBook = session.get(ClientChoice.class, 1);
