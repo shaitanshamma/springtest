@@ -10,12 +10,9 @@ public class MainClass {
     public static void main(String[] args) {
         SessionFactory factory = new Configuration()
                 .configure("hibernate.cfg.xml")
-                .addAnnotatedClass(Book.class)
-                .addAnnotatedClass(Author.class)
                 .addAnnotatedClass(Product.class)
                 .addAnnotatedClass(Client.class)
-        //        .addAnnotatedClass(ClientChoice.class)
-                .addAnnotatedClass(Reader.class)
+                .addAnnotatedClass(ClientChoice.class)
                 .buildSessionFactory();
         // CRUD
         Session session = null;
