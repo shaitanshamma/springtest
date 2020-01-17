@@ -18,9 +18,23 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.version>5.2.2.RELEASE</spring.version>
         <jetty.version>9.2.26.v20180806</jetty.version>
+        <hibernate-version>5.4.10.Final</hibernate-version>
+        <postgresql-version>42.2.9</postgresql-version>
     </properties>
 
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgresql-version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${hibernate-version}</version>
+        </dependency>
         <!--Spring-->
         <dependency>
             <groupId>org.springframework</groupId>
