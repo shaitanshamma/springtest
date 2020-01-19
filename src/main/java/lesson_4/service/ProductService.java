@@ -1,6 +1,8 @@
 package lesson_4.service;
 
 import lesson_4.domen.Product;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,6 +20,8 @@ public interface ProductService<T> {
     List<Product> getProductByTitle(String title);
 
     List<Product> myProductByMaxPrice();
+
     List<Product> myProductByMinPrice();
+
     List<Product> myAwerageProduct(int min, int max);
 }

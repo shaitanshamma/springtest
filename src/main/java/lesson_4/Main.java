@@ -5,6 +5,9 @@ import lesson_4.domen.Product;
 import lesson_4.service.ProductService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -19,6 +22,7 @@ public class Main {
         System.out.println(productMin);
         System.out.println(productMax);
         System.out.println(productAwerage);
+
 
     }
 
