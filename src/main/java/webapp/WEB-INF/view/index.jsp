@@ -9,7 +9,7 @@
 <body>
 <h1>Welcome page</h1>
 
-<h1> Hello ${name}</h1>
+<h1> ${productList} </h1>
 
 <%--, ${name}.--%>
 

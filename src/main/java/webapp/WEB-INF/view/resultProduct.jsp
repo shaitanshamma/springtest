@@ -19,13 +19,13 @@
             <td>${title}</td>
          </tr>
          <tr>
-            <td>cost</td>
-            <td>${cost}</td>
+            <td>price</td>
+            <td>${price}</td>
          </tr>
       </table>
       <ul>
-         <c:forEach var="item" items="${product.list}">
-            <li>${item}</li>
+         <c:forEach var="product" items="${products}">
+            <li>${product}</li>
          </c:forEach>
       </ul>
    </body>
