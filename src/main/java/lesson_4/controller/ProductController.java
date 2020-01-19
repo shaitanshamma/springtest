@@ -19,8 +19,8 @@ public class ProductController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String showProductForm(Model model) {
-//        Product product = new Product();
-        model.addAttribute("productList", "productService.getAll()");
+        model.addAttribute("productList", productService.getAll());
+        System.out.println(productService.getAll());
       //  model.addAttribute("productList", productService.getAll());
         return "index";
     }

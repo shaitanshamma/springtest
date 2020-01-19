@@ -140,7 +140,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>lesson_2.launcher.Launcher</mainClass>
+                            <mainClass>lesson_4.launcher.Launcher</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
