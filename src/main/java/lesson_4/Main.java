@@ -12,11 +12,13 @@ public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
         ProductService productService = context.getBean("productService", ProductService.class);
-        //      saveProduct(productService, 10);
+        //saveProduct(productService, 20);
         List<Product> productMax = productService.myProductByMaxPrice();
         List<Product> productMin = productService.myProductByMinPrice();
+        List<Product> productAwerage = productService.myAwerageProduct(200,800);
         System.out.println(productMin);
         System.out.println(productMax);
+        System.out.println(productAwerage);
 
     }
 

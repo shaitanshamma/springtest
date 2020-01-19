@@ -11,4 +11,5 @@ public interface ProductRepository extends CrudRepository<Product, Long> {
     List<Product> findByTitle(String title);
 //    @Query("select p from Product p where p.price > 100")
 //    List<Product> myProductByPrice();
+    List<Product> findByPriceBetween(int min, int max);
 }

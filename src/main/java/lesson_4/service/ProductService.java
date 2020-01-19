@@ -19,4 +19,5 @@ public interface ProductService<T> {
 
     List<Product> myProductByMaxPrice();
     List<Product> myProductByMinPrice();
+    List<Product> myAwerageProduct(int min, int max);
 }

@@ -57,4 +57,9 @@ public class ProductServiceImpl implements ProductService {
                 .getResultList();
     }
 
+    @Override
+    public List<Product> myAwerageProduct(int min, int max) {
+        return productRepository.findByPriceBetween(min, max);
+    }
+
 }
